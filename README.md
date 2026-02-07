@@ -93,7 +93,7 @@ Si el backend (.NET API) no está disponible, puedes usar datos de prueba:
 
 ### Conectar con Backend Real
 
-1. Asegúrate de que la API de Alexander esté corriendo
+1. Asegúrate de que tu API backend esté corriendo
 2. En `.env` establece: `API_BASE_URL=http://localhost:5000/api`
 3. Establece: `ENABLE_MOCK_DATA=false`
 
@@ -147,16 +147,9 @@ spot_light_web/
 
 ## 📝 Notas
 
-- La aplicación está configurada para trabajar con la API de .NET 8 de Alexander
-- Los datos se almacenan en MongoDB Atlas (configurado por Gustavo)
+- La aplicación está configurada para trabajar con una API backend de .NET 8
+- Los datos se almacenan en una base de datos NoSQL
 - El diseño es responsive y funciona en desktop y tablet
-
-## 👥 Equipo
-
-- **Emily** - Diseño Web
-- **Gustavo** - Base de Datos & Web
-- **Alexander** - Backend API
-- **Javier** - App Móvil
 
 ## 📄 Licencia
 

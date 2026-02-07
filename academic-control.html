@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Spot-Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">Spot-Light</div>
+                        <div class="text-xs text-slate-500">ACADEMIC AI</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4">
+                <a href="academic-control.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Panel</span>
+                </a>
+                <a href="catalog.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Proyectos</span>
+                </a>
+                <a href="evaluations.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Evaluaciones</span>
+                </a>
+                <a href="analytics.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Resultados</span>
+                </a>
+                <a href="evaluation-history.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="font-medium">Histórico</span>
+                </a>
+                <a href="teams.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Perfil</span>
+                </a>
+            </nav>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 transition cursor-pointer">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-sm">
+                        DK
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-medium text-sm">Dr. Kristina</div>
+                        <div class="text-xs text-green-400 flex items-center gap-1">
+                            <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            Online
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+
+            <!-- Header -->
+            <header class="bg-slate-900 border-b border-slate-800 px-8 py-4 sticky top-0 z-10">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold mb-1">Panel de Control</h1>
+                        <p class="text-sm text-cyan-400">Todos tus datos 2026</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <input type="text" placeholder="Buscar proyectos..."
+                                class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm w-64">
+                        </div>
+                        <button class="p-2 hover:bg-slate-800 rounded-lg transition">
+                            <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                </path>
+                            </svg>
+                        </button>
+                        <button class="p-2 hover:bg-slate-800 rounded-lg transition">
+                            <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="p-8">
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-4 gap-6 mb-8">
+                    <!-- Total Projects -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="text-sm text-slate-400 mb-2">TOTAL PROYECTOS</div>
+                        <div class="flex items-end gap-2 mb-2">
+                            <div class="text-4xl font-bold">1,284</div>
+                            <div class="text-green-400 text-sm mb-1">+8%</div>
+                        </div>
+                    </div>
+
+                    <!-- Pending Evaluations -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="text-sm text-slate-400 mb-2">EVALUACIONES PENDIENTES</div>
+                        <div class="flex items-end gap-2 mb-2">
+                            <div class="text-4xl font-bold">42</div>
+                            <div class="text-slate-400 text-sm mb-1">Pendientes</div>
+                        </div>
+                    </div>
+
+                    <!-- Average Rating -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="text-sm text-slate-400 mb-2">PROMEDIO</div>
+                        <div class="flex items-end gap-2 mb-2">
+                            <div class="text-4xl font-bold">8.92</div>
+                            <div class="flex gap-1 mb-1">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Students -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="text-sm text-slate-400 mb-2">ESTUDIANTES</div>
+                        <div class="flex items-end gap-2 mb-2">
+                            <div class="text-4xl font-bold">156</div>
+                            <div class="text-slate-400 text-sm mb-1">Activos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Table -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
+                    <div class="p-6 border-b border-slate-700">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-bold">Estado general de proyectos</h2>
+                            <div class="flex gap-2">
+                                <button
+                                    class="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600 transition">
+                                    Exportar Reporte
+                                </button>
+                                <button
+                                    class="px-4 py-2 gradient-primary rounded-lg text-sm font-medium hover:shadow-lg hover:shadow-blue-500/50 transition">
+                                    Nuevo Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Proyecto</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Equipo</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Estado</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Evaluación Estimada</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Calificación</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Calificación Profesor</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-slate-400 uppercase">
+                                        Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700">
+                                <!-- Row 1 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex gap-1">
+                                                <span
+                                                    class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-medium">IA</span>
+                                                <span
+                                                    class="px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded text-xs font-medium">ML</span>
+                                            </div>
+                                            <span class="font-medium">Eco-Sistemas Urbanos</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">Dra. Elena Vargas</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">En
+                                            Progreso</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">25</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-green-400 font-bold">8.45</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">75 / 100</td>
+                                    <td class="px-6 py-4">
+                                        <button
+                                            class="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg text-xs font-medium hover:bg-green-500/30 transition">
+                                            Revisar / Ver
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 2 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex gap-1">
+                                                <span
+                                                    class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-xs font-medium">IA</span>
+                                                <span
+                                                    class="px-2 py-1 bg-pink-500/20 text-pink-400 rounded text-xs font-medium">ML</span>
+                                            </div>
+                                            <span class="font-medium">IA Predictiva Médica</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">Dr. Marcos Ruiz</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">Finalizado</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">—</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-cyan-400 font-bold">9.89</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">16.6</td>
+                                    <td class="px-6 py-4">
+                                        <button
+                                            class="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg text-xs font-medium hover:bg-green-500/30 transition">
+                                            Revisar / Ver
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 3 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex gap-1">
+                                                <span
+                                                    class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs font-medium">IA</span>
+                                            </div>
+                                            <span class="font-medium">Quantum Logistics</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">Sin asignar</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-slate-600 text-slate-300 rounded-full text-xs font-medium">Pendiente</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">—</td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-slate-500">—</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">—</td>
+                                    <td class="px-6 py-4">
+                                        <button
+                                            class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs font-medium hover:bg-blue-500/30 transition">
+                                            Asignar Eval
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 4 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex gap-1">
+                                                <span
+                                                    class="px-2 py-1 bg-orange-500/20 text-orange-400 rounded text-xs font-medium">IA</span>
+                                                <span
+                                                    class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-medium">ML</span>
+                                            </div>
+                                            <span class="font-medium">Bio-Blockchain</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">Dra. Sara Cortez</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">En
+                                            Progreso</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">—</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-yellow-400 font-bold">8.45</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-300">75 / 100</td>
+                                    <td class="px-6 py-4">
+                                        <button
+                                            class="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg text-xs font-medium hover:bg-green-500/30 transition">
+                                            Revisar / Ver
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Table Footer -->
+                    <div class="p-4 border-t border-slate-700 flex items-center justify-between">
+                        <div class="text-sm text-slate-400">
+                            Mostrando 4 de 156 proyectos registrados
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="p-2 hover:bg-slate-700 rounded transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-1 bg-blue-500 rounded text-sm">1</button>
+                            <button class="px-3 py-1 hover:bg-slate-700 rounded text-sm">2</button>
+                            <button class="px-3 py-1 hover:bg-slate-700 rounded text-sm">3</button>
+                            <button class="px-3 py-1 hover:bg-slate-700 rounded text-sm">...</button>
+                            <button class="px-3 py-1 hover:bg-slate-700 rounded text-sm">10</button>
+                            <button class="p-2 hover:bg-slate-700 rounded transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

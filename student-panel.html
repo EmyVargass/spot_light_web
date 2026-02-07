@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Estudiante - Spot-Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Spot-Light Logo" class="w-12 h-12 rounded-lg">
+                    <div>
+                        <div class="font-bold text-lg">Spot-Light</div>
+                        <div class="text-xs text-slate-500">ACADEMIC ASSISTANT</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4">
+                <a href="student-panel.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Inicio</span>
+                </a>
+                <a href="project-detail.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Mi Proyecto</span>
+                </a>
+                <a href="project-results.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Mis Resultados</span>
+                </a>
+                <a href="profile-control.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="font-medium">Configuración</span>
+                </a>
+            </nav>
+
+            <!-- Footer -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="bg-slate-800 rounded-lg p-4">
+                    <div class="text-xs text-slate-400 mb-1">Espacio de Almacenamiento</div>
+                    <div class="text-sm font-bold mb-2">1.3 GB de 2 GB</div>
+                    <div class="w-full bg-slate-700 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+
+            <!-- Header -->
+            <header class="bg-slate-900 border-b border-slate-800 px-8 py-6 sticky top-0 z-10">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-1">Panel del Estudiante / <span
+                                class="text-slate-400">Resumen</span></h1>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <input type="text" placeholder="Buscar proyectos..."
+                                class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm w-64">
+                        </div>
+                        <button class="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="flex items-center gap-3">
+                            <div class="text-right">
+                                <div class="font-medium text-sm">Juan Pérez</div>
+                                <div class="text-xs text-slate-400">Estudiante</div>
+                            </div>
+                            <div
+                                class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-sm">
+                                JP
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="p-8">
+
+                <!-- Statistics Cards -->
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <!-- Card 1 -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-slate-400">Proyectos enviados</div>
+                            <div class="p-2 bg-blue-500/20 rounded-lg">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold mb-1">03</div>
+                        <div class="text-xs text-blue-400">+2 este mes</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-slate-400">Evaluaciones recibidas</div>
+                            <div class="p-2 bg-cyan-500/20 rounded-lg">
+                                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold mb-1 text-cyan-400">02</div>
+                        <div class="text-xs text-cyan-400">100% completadas</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-slate-400">Promedio de puntuación</div>
+                            <div class="p-2 bg-purple-500/20 rounded-lg">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold mb-1 text-purple-400">9.4</div>
+                        <div class="text-xs text-purple-400">Top 10 de tu clase</div>
+                    </div>
+                </div>
+
+                <!-- My Projects Section -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-bold">Mis Proyectos</h2>
+                        <a href="projects.html" class="text-sm text-blue-400 hover:text-blue-300 transition">Ver todos
+                            →</a>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
+                        <table class="w-full">
+                            <thead class="bg-slate-900">
+                                <tr class="text-left text-xs font-semibold text-slate-400 uppercase">
+                                    <th class="px-6 py-4">Nombre del Proyecto</th>
+                                    <th class="px-6 py-4">Fecha</th>
+                                    <th class="px-6 py-4">Estado</th>
+                                    <th class="px-6 py-4">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700">
+                                <!-- Row 1 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="p-2 bg-blue-500/20 rounded-lg">
+                                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="font-medium">Investigación IA Generativa</div>
+                                                <div class="text-xs text-slate-400">IA y Machine Learning - Informática
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-400">13 Oct 2025</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium">Evaluado</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="project-results.html"
+                                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-sm font-medium transition inline-block">
+                                            Ver resultados
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 2 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="p-2 bg-purple-500/20 rounded-lg">
+                                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="font-medium">Algoritmos de Optimización</div>
+                                                <div class="text-xs text-slate-400">Ciencia Computacional - Matemáticas
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-400">02 Nov 2025</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs font-medium">En
+                                            proceso</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="project-detail.html"
+                                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-sm font-medium transition inline-block">
+                                            Ver detalles
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 3 -->
+                                <tr class="hover:bg-slate-700/50 transition">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="p-2 bg-green-500/20 rounded-lg">
+                                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="font-medium">Arquitectura de Redes</div>
+                                                <div class="text-xs text-slate-400">Cloud Computing - Informática</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-400">28 Oct 2025</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium">Evaluado</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="project-results.html"
+                                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-sm font-medium transition inline-block">
+                                            Ver resultados
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- AI Analysis Section -->
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Análisis de IA de tus proyectos</h2>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Card 1 - Viabilidad -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <div class="text-sm text-slate-400 mb-1">Viabilidad del Proyecto</div>
+                                    <div class="text-xs text-slate-500">Factibilidad técnica del proyecto estudiado
+                                    </div>
+                                </div>
+                                <div class="text-3xl font-bold text-cyan-400">92%</div>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2 mb-3">
+                                <div class="bg-cyan-400 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                            <p class="text-xs text-slate-400">Insight: Tu método en IA Generativa tiene una alta
+                                probabilidad de éxito. La metodología propuesta es sólida y bien fundamentada en teoría
+                                vigente.</p>
+                        </div>
+
+                        <!-- Card 2 - Puntuación Técnica -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <div class="text-sm text-slate-400 mb-1">Puntuación Técnica</div>
+                                    <div class="text-xs text-slate-500">Eficiencia de código e implementación</div>
+                                </div>
+                                <div class="text-3xl font-bold text-blue-400">88%</div>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2 mb-3">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                            <p class="text-xs text-slate-400">Sugerencia: La complejidad O(n) es excelente. Considera
+                                reducir el uso de memoria en el módulo de entrenamiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Proyecto - Spot-Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 12px;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">Spot-Light</div>
+                        <div class="text-xs text-slate-500">Academic AI</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4">
+                <a href="dashboard.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                    </svg>
+                    <span class="font-medium">Panel Principal</span>
+                </a>
+                <a href="catalog.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Proyectos</span>
+                </a>
+                <a href="evaluations.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="font-medium">Evaluaciones de Datos</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Informes</span>
+                </a>
+                <a href="role-selection.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="font-medium">Configuración</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+
+            <!-- Header -->
+            <header
+                class="bg-slate-900 border-b border-slate-800 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
+                <div class="flex items-center gap-4">
+                    <a href="catalog.html" class="text-slate-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div>
+                        <div class="flex items-center gap-2 text-sm text-slate-400">
+                            <span>Proyectos</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                            <span class="text-white">Detalles del Proyecto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 hover:bg-slate-800 rounded-lg transition">
+                        <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm text-slate-400">Dr. Aris Thorne</span>
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-sm">
+                            AT
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- Left Column - Video and Details -->
+                    <div class="lg:col-span-2 space-y-6">
+
+                        <!-- Video Player -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
+                            <div class="relative">
+                                <!-- Video Container -->
+                                <div class="video-container bg-gradient-to-br from-slate-800 to-slate-900">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <button
+                                            class="w-20 h-20 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition shadow-lg shadow-blue-500/50">
+                                            <svg class="w-10 h-10 text-white ml-1" fill="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path d="M8 5v14l11-7z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <!-- Decorative neural network visualization -->
+                                    <div class="absolute inset-0 opacity-20">
+                                        <svg class="w-full h-full" viewBox="0 0 400 300">
+                                            <circle cx="100" cy="150" r="40" fill="none" stroke="#3b82f6"
+                                                stroke-width="2" />
+                                            <circle cx="200" cy="80" r="30" fill="none" stroke="#06b6d4"
+                                                stroke-width="2" />
+                                            <circle cx="200" cy="220" r="30" fill="none" stroke="#06b6d4"
+                                                stroke-width="2" />
+                                            <circle cx="300" cy="150" r="40" fill="none" stroke="#3b82f6"
+                                                stroke-width="2" />
+                                            <line x1="140" y1="150" x2="170" y2="90" stroke="#3b82f6" stroke-width="1"
+                                                opacity="0.5" />
+                                            <line x1="140" y1="150" x2="170" y2="210" stroke="#3b82f6" stroke-width="1"
+                                                opacity="0.5" />
+                                            <line x1="230" y1="90" x2="260" y2="150" stroke="#06b6d4" stroke-width="1"
+                                                opacity="0.5" />
+                                            <line x1="230" y1="210" x2="260" y2="150" stroke="#06b6d4" stroke-width="1"
+                                                opacity="0.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Video Controls Overlay -->
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="px-3 py-1 bg-green-500 rounded text-xs font-bold">EN VIVO / EN
+                                            DIRECTO</span>
+                                        <div class="flex-1"></div>
+                                        <span class="text-sm">03:42 / 16:45</span>
+                                    </div>
+                                    <div class="mt-2 flex items-center gap-3">
+                                        <button class="hover:text-blue-400">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8 5v14l11-7z"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="hover:text-blue-400">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="hover:text-blue-400">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M7 6v12l10-6z"></path>
+                                            </svg>
+                                        </button>
+                                        <button class="hover:text-blue-400">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M5 3l3.057-3L20 12 8.057 24 5 21l9-9z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Title -->
+                            <div class="p-4 border-t border-slate-700">
+                                <h3 class="font-bold mb-1">Vídeo demostración: Mopso Neural v4.2</h3>
+                                <p class="text-sm text-slate-400">Presentación del proyecto completo</p>
+                            </div>
+                        </div>
+
+                        <!-- Research Summary -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <h3 class="text-lg font-bold mb-4 text-blue-400">RESUMEN DE INVESTIGACIÓN</h3>
+                            <div class="space-y-4 text-slate-300">
+                                <p>
+                                    El proyecto Spot-Light introduce un marco de análisis visual autónomo e innovador
+                                    diseñado para procesar datos especializados multidimensionales de alta velocidad en
+                                    tiempo real. Al aprovechar una arquitectura de redes neuronales profundas, el
+                                    sistema logra una reducción del 40% en la latencia de inferencia mientras mantiene
+                                    una precisión del 96% en tareas de segmentación de objetos.
+                                </p>
+                                <p>
+                                    El núcleo de las herramientas de análisis reside en un mecanismo de atención
+                                    adaptativa que permite al modelo enfocarse dinámicamente en regiones de interés,
+                                    mejorando significativamente el rendimiento en escenarios con oclusiones parciales y
+                                    variaciones de iluminación. Este enfoque ha demostrado ser particularmente efectivo
+                                    en aplicaciones de visión por computadora en tiempo real.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Materials -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <h3 class="text-lg font-bold mb-4 text-blue-400">MATERIALES</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div
+                                    class="bg-slate-900 border border-slate-700 rounded-lg p-4 hover:border-blue-500 transition cursor-pointer">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="p-2 bg-blue-500/20 rounded">
+                                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-sm">Adquisición de Datos</h4>
+                                            <p class="text-xs text-slate-400">Metodología de recolección</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="bg-slate-900 border border-slate-700 rounded-lg p-4 hover:border-blue-500 transition cursor-pointer">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="p-2 bg-cyan-500/20 rounded">
+                                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-sm">Procesamiento Neural</h4>
+                                            <p class="text-xs text-slate-400">Arquitectura del modelo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Project Info -->
+                    <div class="space-y-6">
+
+                        <!-- Project Title -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <h1 class="text-2xl font-bold mb-2">Spot-Light: Análisis Visual Autónomo</h1>
+                            <p class="text-slate-400 mb-4">Un marco de análisis visual autónomo e innovador</p>
+
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">React
+                                    IA</span>
+                                <span
+                                    class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium">TensorFlow</span>
+                                <span
+                                    class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">OpenAI
+                                    3.11</span>
+                            </div>
+
+                            <!-- Technologies -->
+                            <div class="mb-4">
+                                <h3 class="text-sm font-semibold text-slate-400 mb-2">TECNOLOGÍAS UTILIZADAS</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 bg-slate-900 border border-slate-700 rounded text-xs">Python</span>
+                                    <span
+                                        class="px-2 py-1 bg-slate-900 border border-slate-700 rounded text-xs">PyTorch</span>
+                                    <span
+                                        class="px-2 py-1 bg-slate-900 border border-slate-700 rounded text-xs">OpenCV</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <h3 class="text-sm font-semibold text-slate-400 mb-3">DESCRIPCIÓN</h3>
+                            <p class="text-sm text-slate-300 mb-4">
+                                La plataforma Spot-Light sirve como el núcleo central de navegación para la
+                                investigación de IA, facilitando la exploración de conjuntos de datos, la implementación
+                                de modelos y la visualización de resultados en tiempo real.
+                            </p>
+                            <p class="text-sm text-slate-300">
+                                Desarrollado con las herramientas de análisis más avanzadas del mercado, permite a los
+                                investigadores visualizar patrones complejos de datos y generar insights accionables en
+                                tiempo real.
+                            </p>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="text-sm text-slate-400 mb-1">Tamaño de Datos</div>
+                                    <div class="text-2xl font-bold">1.2 TB</div>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-slate-400 mb-1">Tiempo de Proc.</div>
+                                    <div class="text-2xl font-bold">12ms</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <a href="evaluation-panel.html"
+                            class="w-full gradient-primary py-4 rounded-lg font-bold text-lg hover:shadow-lg hover:shadow-blue-500/50 transition flex items-center justify-center gap-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Evaluar proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+</body>
+
+</html>

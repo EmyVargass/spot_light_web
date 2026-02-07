@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Equipos - Spot-Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">Spot-Light</div>
+                        <div class="text-xs text-slate-500">ACADEMIC ASSISTANT</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4">
+                <a href="dashboard.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Inicio</span>
+                </a>
+                <a href="team-management.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Gestión de Equipos</span>
+                </a>
+                <a href="evaluations.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Evaluaciones</span>
+                </a>
+                <a href="global-results.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Resultados</span>
+                </a>
+                <a href="system-config.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="font-medium">Configuración</span>
+                </a>
+            </nav>
+
+            <!-- Footer -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="bg-slate-800 rounded-lg p-4">
+                    <div class="text-xs text-slate-400 mb-1">Espacio de Almacenamiento</div>
+                    <div class="text-sm font-bold mb-2">15.4 GB / 30 GB</div>
+                    <div class="w-full bg-slate-700 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 51%"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+
+            <!-- Header -->
+            <header class="bg-slate-900 border-b border-slate-800 px-8 py-6 sticky top-0 z-10">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                        <h1 class="text-3xl font-bold">Gestión de Equipos</h1>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            <input type="text" placeholder="Buscar equipo o integrante..."
+                                class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm w-80">
+                        </div>
+                        <button class="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="flex items-center gap-3">
+                            <div class="text-right">
+                                <div class="font-medium text-sm">Dr. Rodrigo Ávila</div>
+                                <div class="text-xs text-slate-400">Coordinador</div>
+                            </div>
+                            <div
+                                class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-sm">
+                                RA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="p-8">
+
+                <!-- Filters -->
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <button class="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium">Todos</button>
+                        <button
+                            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm font-medium transition">En
+                            progreso</button>
+                        <button
+                            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm font-medium transition">Finalizados</button>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                            Ordenar por:
+                            <span class="text-blue-400">Recientes</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Teams Grid -->
+                <div class="grid grid-cols-3 gap-6 mb-8">
+
+                    <!-- Team Card 1 - Proyecto Alpha-X -->
+                    <div
+                        class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 transition">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">Proyecto Alpha-X</h3>
+                                    <p class="text-sm text-slate-400">4 integrantes • 2 roles</p>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">ACTIVO</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-xs text-slate-400 mb-3 font-semibold">INTEGRANTES Y ROLES</div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            MA
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Mario Antonio Solis</div>
+                                            <div class="text-xs text-slate-400">Líder de equipo</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            LG
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Luis García</div>
+                                            <div class="text-xs text-slate-400">Desarrollador</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            RV
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Roberto Valenzuela</div>
+                                            <div class="text-xs text-slate-400">Desarrollador</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-700 flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-xs text-slate-400">
+                                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
+                                        </path>
+                                    </svg>
+                                    Líder: Dra. Elena Martínez
+                                </div>
+                                <button class="text-blue-400 hover:text-blue-300 transition">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Card 2 - Sistema Delta Core -->
+                    <div
+                        class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 transition">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">Sistema Delta Core</h3>
+                                    <p class="text-sm text-slate-400">3 integrantes • 2 roles</p>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-xs font-medium">FINALIZADO</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-xs text-slate-400 mb-3 font-semibold">INTEGRANTES Y ROLES</div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            SR
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Sofía Rodríguez</div>
+                                            <div class="text-xs text-slate-400">Líder de equipo</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            JM
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">José Martínez</div>
+                                            <div class="text-xs text-slate-400">Desarrollador</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            KF
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Karla Figueroa</div>
+                                            <div class="text-xs text-slate-400">Analista QA</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-700 flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-xs text-slate-400">
+                                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
+                                        </path>
+                                    </svg>
+                                    Líder: Mtro. Ricardo Díaz
+                                </div>
+                                <button class="text-blue-400 hover:text-blue-300 transition">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Card 3 - Red Omega Cloud -->
+                    <div
+                        class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden hover:border-blue-500/50 transition">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">Red Omega Cloud</h3>
+                                    <p class="text-sm text-slate-400">4 integrantes • 3 roles</p>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">ACTIVO</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-xs text-slate-400 mb-3 font-semibold">INTEGRANTES Y ROLES</div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            AM
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Andrés Mendoza</div>
+                                            <div class="text-xs text-slate-400">Líder de equipo</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            PC
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Patricia Castro</div>
+                                            <div class="text-xs text-slate-400">Diseñadora UX</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-xs font-bold">
+                                            DV
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Daniel Vera</div>
+                                            <div class="text-xs text-slate-400">Backend Dev</div>
+                                        </div>
+                                        <button class="p-1 hover:bg-slate-700 rounded">
+                                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-700 flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-xs text-slate-400">
+                                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
+                                        </path>
+                                    </svg>
+                                    Líder: Dr. Rodrigo Ávila
+                                </div>
+                                <button class="text-blue-400 hover:text-blue-300 transition">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register New Team Section -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Registrar Nuevo Equipo</h3>
+                        <p class="text-slate-400 mb-6 max-w-md">Registra un nuevo equipo de trabajo y asigna integrantes
+                            para iniciar un proyecto colaborativo.</p>
+                        <button
+                            class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            Nuevo Proyecto
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Footer Stats -->
+                <div class="mt-8 flex items-center justify-between text-sm text-slate-400">
+                    <div class="flex items-center gap-6">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            <span>3 EN PROGRESO</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                            <span>4 FINALIZADOS</span>
+                        </div>
+                    </div>
+                    <div>
+                        Ciclo Académico 2024 - Periodo 8
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

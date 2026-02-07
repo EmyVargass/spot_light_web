@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de IA - Spot-Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        /* Animated Circles */
+        .circle-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            border-color: rgba(59, 130, 246, 0.3);
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 240px;
+            height: 240px;
+            border-color: rgba(6, 182, 212, 0.4);
+            top: 30px;
+            left: 30px;
+            animation-delay: 0.5s;
+        }
+
+        .circle-3 {
+            width: 180px;
+            height: 180px;
+            border-color: rgba(59, 130, 246, 0.5);
+            top: 60px;
+            left: 60px;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        /* Rotating outer ring */
+        .outer-ring {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border: 3px solid transparent;
+            border-top-color: #3b82f6;
+            border-right-color: #06b6d4;
+            border-radius: 50%;
+            animation: rotate 4s linear infinite;
+            top: -10px;
+            left: -10px;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Center icon pulse */
+        .center-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        /* Dots animation */
+        .dot {
+            animation: dotPulse 1.5s ease-in-out infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes dotPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Progress bar animation */
+        .progress-bar {
+            animation: progressGrow 8s ease-in-out infinite;
+        }
+
+        @keyframes progressGrow {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 75%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 40%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            top: 80%;
+            left: 70%;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
+        <!-- Logo -->
+        <div class="p-6 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+<img src="images/logo.png" alt="Spot-Light Logo" class="w-10 h-10 rounded-lg">
+                <div>
+                    <div class="font-bold text-lg">Spot-Light</div>
+                    <div class="text-xs text-slate-500">Academic AI</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 p-4">
+            <a href="dashboard.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+                <span class="font-medium">Panel de Control</span>
+            </a>
+            <a href="catalog.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                    </path>
+                </svg>
+                <span class="font-medium">Explorador</span>
+            </a>
+            <a href="evaluations.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                    </path>
+                </svg>
+                <span class="font-medium">Resultados</span>
+            </a>
+            <a href="analytics.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                    </path>
+                </svg>
+                <span class="font-medium">Análisis de Datos</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center relative overflow-hidden">
+
+        <!-- Floating particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <!-- Center Content -->
+        <div class="text-center z-10">
+
+            <!-- Animated Circles -->
+            <div class="flex justify-center mb-12">
+                <div class="circle-container">
+                    <div class="outer-ring"></div>
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+
+                    <!-- Center Icon -->
+                    <div class="center-icon">
+                        <div class="p-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full">
+                            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title and Description -->
+            <h1 class="text-4xl font-bold mb-4">Análisis de IA en proceso</h1>
+            <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+                La inteligencia artificial está analizando la evaluación del proyecto
+            </p>
+
+            <!-- Status Message -->
+            <div class="mb-8">
+                <div
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full">
+                    <div class="flex gap-1">
+                        <span class="dot w-2 h-2 bg-blue-400 rounded-full"></span>
+                        <span class="dot w-2 h-2 bg-blue-400 rounded-full"></span>
+                        <span class="dot w-2 h-2 bg-blue-400 rounded-full"></span>
+                    </div>
+                    <span class="text-sm font-medium" id="statusText">Calculando métricas académicas</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="max-w-md mx-auto mb-8">
+                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                    <div class="progress-bar h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
+                    <div class="text-3xl font-bold text-blue-400 mb-2" id="stat1">0</div>
+                    <div class="text-sm text-slate-400">Criterios analizados</div>
+                </div>
+                <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
+                    <div class="text-3xl font-bold text-cyan-400 mb-2" id="stat2">0%</div>
+                    <div class="text-sm text-slate-400">Precisión del modelo</div>
+                </div>
+                <div class="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6">
+                    <div class="text-3xl font-bold text-green-400 mb-2" id="stat3">0s</div>
+                    <div class="text-sm text-slate-400">Tiempo estimado</div>
+                </div>
+            </div>
+
+            <!-- Bottom Info -->
+            <div class="mt-12 text-sm text-slate-500">
+                <p>Esto puede tardar unos momentos mientras procesamos los datos...</p>
+            </div>
+        </div>
+
+        <!-- Background Grid -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0"
+                style="background-image: linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px); background-size: 50px 50px;">
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Simulate processing stages
+        const stages = [
+            'Calculando métricas académicas',
+            'Analizando innovación y originalidad',
+            'Evaluando funcionamiento técnico',
+            'Revisando diseño y experiencia',
+            'Midiendo impacto social',
+            'Generando reporte final'
+        ];
+
+        let currentStage = 0;
+        let criteriaCount = 0;
+        let precision = 0;
+        let timeLeft = 15;
+
+        // Update status text
+        setInterval(() => {
+            currentStage = (currentStage + 1) % stages.length;
+            document.getElementById('statusText').textContent = stages[currentStage];
+        }, 2500);
+
+        // Animate stats
+        setInterval(() => {
+            if (criteriaCount < 4) {
+                criteriaCount++;
+                document.getElementById('stat1').textContent = criteriaCount;
+            }
+        }, 2000);
+
+        setInterval(() => {
+            if (precision < 98) {
+                precision += Math.floor(Math.random() * 5) + 1;
+                if (precision > 98) precision = 98;
+                document.getElementById('stat2').textContent = precision + '%';
+            }
+        }, 500);
+
+        setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                document.getElementById('stat3').textContent = timeLeft + 's';
+            } else {
+                // Redirect to dashboard after processing
+                window.location.href = 'dashboard.html';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

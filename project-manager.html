@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos - Spot-Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">Spot-Light</div>
+                        <div class="text-xs text-slate-500">ACADEMIC ASSISTANT</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4">
+                <a href="dashboard.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Panel Principal</span>
+                </a>
+                <a href="project-manager.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Proyectos</span>
+                </a>
+                <a href="evaluations.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Carreras y Grupos</span>
+                </a>
+                <a href="analytics.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Reportes Globales</span>
+                </a>
+                <a href="profile-control.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="font-medium">Configuración</span>
+                </a>
+            </nav>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-800">
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 transition cursor-pointer">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-sm">
+                        DR
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-medium text-sm">Dr. Ricardo Luna</div>
+                        <div class="text-xs text-green-400 flex items-center gap-1">
+                            <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            Online
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex overflow-hidden">
+
+            <!-- Projects Table Section -->
+            <div class="flex-1 flex flex-col overflow-hidden">
+
+                <!-- Header -->
+                <header class="bg-slate-900 border-b border-slate-800 px-8 py-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h1 class="text-2xl font-bold mb-1">Gestión de Proyectos</h1>
+                            <p class="text-sm text-slate-400">Administra todos los proyectos 2026</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="p-2 hover:bg-slate-800 rounded-lg transition">
+                                <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button
+                                class="gradient-primary px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition">
+                                Registrar nuevo proyecto
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Filters -->
+                <div class="px-8 py-4 bg-slate-900 border-b border-slate-800">
+                    <div class="flex items-center gap-4">
+                        <select
+                            class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500">
+                            <option>Carrera</option>
+                            <option>Ingeniería</option>
+                            <option>Medicina</option>
+                            <option>Arquitectura</option>
+                        </select>
+                        <select
+                            class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500">
+                            <option>Grupo</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                        </select>
+                        <select
+                            class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500">
+                            <option>Estudio</option>
+                            <option>Todos</option>
+                            <option>En progreso</option>
+                            <option>Completados</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="flex-1 overflow-auto px-8 py-6">
+                    <table class="w-full">
+                        <thead class="sticky top-0 bg-slate-900">
+                            <tr
+                                class="text-left text-xs font-semibold text-slate-400 uppercase border-b border-slate-800">
+                                <th class="pb-3">Proyecto</th>
+                                <th class="pb-3">Equipo</th>
+                                <th class="pb-3">Carrera</th>
+                                <th class="pb-3">Fecha</th>
+                                <th class="pb-3">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-slate-800/50 transition cursor-pointer" onclick="showProjectDetails(1)">
+                                <td class="py-4">
+                                    <div class="font-medium">Sistema de Energía Solar 3.0</div>
+                                    <div class="text-xs text-slate-400">ID#1823</div>
+                                </td>
+                                <td class="py-4 text-sm text-slate-300">Alicia Engineering</td>
+                                <td class="py-4 text-sm text-slate-300">Eléctrica</td>
+                                <td class="py-4 text-sm text-slate-400">20 Nov, 2026</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">En
+                                        Revisión Final</span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-slate-800/50 transition cursor-pointer" onclick="showProjectDetails(2)">
+                                <td class="py-4">
+                                    <div class="font-medium">App Móvil Nutrición Pro</div>
+                                    <div class="text-xs text-slate-400">ID#1824</div>
+                                </td>
+                                <td class="py-4 text-sm text-slate-300">Beta Tech Squad</td>
+                                <td class="py-4 text-sm text-slate-300">Life Science</td>
+                                <td class="py-4 text-sm text-slate-400">18 Nov, 2026</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">Finalizado</span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-slate-800/50 transition cursor-pointer" onclick="showProjectDetails(3)">
+                                <td class="py-4">
+                                    <div class="font-medium">Prom de Gestión Acústica</div>
+                                    <div class="text-xs text-slate-400">ID#1825</div>
+                                </td>
+                                <td class="py-4 text-sm text-slate-300">Rhythm Robotics</td>
+                                <td class="py-4 text-sm text-slate-300">Robótica</td>
+                                <td class="py-4 text-sm text-slate-400">15 Nov, 2026</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs font-medium">En
+                                        Progreso</span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4 -->
+                            <tr class="hover:bg-slate-800/50 transition cursor-pointer" onclick="showProjectDetails(4)">
+                                <td class="py-4">
+                                    <div class="font-medium">Inteligencia artificial en Diagnóstico</div>
+                                    <div class="text-xs text-slate-400">ID#1826</div>
+                                </td>
+                                <td class="py-4 text-sm text-slate-300">Neural Informatics</td>
+                                <td class="py-4 text-sm text-slate-300">Informática</td>
+                                <td class="py-4 text-sm text-slate-400">12 Nov, 2026</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-medium">Evaluación
+                                        IA</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Pagination -->
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="text-sm text-slate-400">
+                            Mostrando 4 de 156 proyectos registrados
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="p-2 hover:bg-slate-800 rounded transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-1 bg-blue-500 rounded text-sm">1</button>
+                            <button class="px-3 py-1 hover:bg-slate-800 rounded text-sm">2</button>
+                            <button class="px-3 py-1 hover:bg-slate-800 rounded text-sm">3</button>
+                            <button class="p-2 hover:bg-slate-800 rounded transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details Panel -->
+            <aside id="detailsPanel"
+                class="w-96 bg-white text-slate-900 border-l border-slate-200 flex flex-col overflow-hidden">
+
+                <!-- Panel Header -->
+                <div class="p-6 border-b border-slate-200">
+                    <h2 class="text-xl font-bold mb-1">Detalles del Proyecto</h2>
+                    <p class="text-sm text-slate-500">Información completa</p>
+                </div>
+
+                <!-- Panel Content -->
+                <div class="flex-1 overflow-auto p-6">
+
+                    <!-- Project Icon -->
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">App Móvil Nutrición Pro</h3>
+                        <p class="text-sm text-slate-500">Aplicación de Software • v.2.4</p>
+                    </div>
+
+                    <!-- Status Badge -->
+                    <div class="mb-6">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 border border-green-200 rounded-lg">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-green-700 text-sm font-medium">En Revisión Final</span>
+                        </div>
+                    </div>
+
+                    <!-- Score -->
+                    <div class="mb-6 p-4 bg-blue-50 rounded-xl">
+                        <div class="text-sm text-slate-600 mb-1">CALIFICACIÓN</div>
+                        <div class="flex items-end gap-2">
+                            <div class="text-4xl font-bold text-blue-600">85/100</div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-slate-600 mb-2">DESCRIPCIÓN</h4>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            Plataforma móvil innovadora que utiliza inteligencia artificial para la gestión nutricional
+                            personalizada mediante el uso de algoritmos avanzados para planes de alimentación basados en
+                            objetivos específicos del usuario.
+                        </p>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-slate-600 mb-3">RECURSOS ENTREGABLES</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3 p-3 bg-red-50 border border-red-100 rounded-lg">
+                                <div class="p-2 bg-red-100 rounded">
+                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-slate-900">Requerimientos_Tecnico.pdf</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 bg-blue-50 border border-blue-100 rounded-lg">
+                                <div class="p-2 bg-blue-100 rounded">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-slate-900">Código_Fuente_Beta.zip</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-slate-600 mb-3">COLABORADORES REGISTRADOS</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                                    ML
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">Dra. Marcela López</div>
+                                    <div class="text-xs text-slate-500">Líder de proyecto</div>
+                                </div>
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                                    RT
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">Ing. Roberto Tovar</div>
+                                    <div class="text-xs text-slate-500">Desarrollador</div>
+                                </div>
+                                <div class="w-2 h-2 bg-slate-300 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button class="w-full gradient-primary py-3 rounded-lg font-semibold hover:shadow-lg transition">
+                        Gestionar
+                    </button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        function showProjectDetails(projectId) {
+            // In a real app, this would fetch project details from API
+            console.log('Showing details for project:', projectId);
+        }
+    </script>
+</body>
+
+</html>

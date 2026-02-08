@@ -29,242 +29,125 @@
 </head>
 
 <body class="bg-slate-900 text-white">
+    <!-- El layout se inyecta aquí automáticamente -->
+    <div id="app"></div>
 
-    <div class="flex min-h-screen">
+    <!-- Contenido específico de la página (template) -->
+    <template id="page-content">
+        <!-- Content -->
+        <div class="p-8">
 
-        <!-- Sidebar -->
-        <aside class="w-64 bg-slate-950 border-r border-slate-800 flex flex-col">
-            <!-- Logo -->
-            <div class="p-6 border-b border-slate-800">
-                <div class="flex items-center gap-3">
-                    <img src="images/logodos.png" alt="Spot-Light" class="h-12 w-auto">
-                    <div>
-                        <div class="font-bold text-lg">Spot-Light</div>
-                        <div class="text-xs text-slate-500">Academic AI</div>
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+                <!-- Total Projects -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-blue-500/20 rounded-lg">
+                            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-slate-500">+12.5%</span>
                     </div>
+                    <div class="text-3xl font-bold mb-1" id="totalProjects">1,284</div>
+                    <div class="text-sm text-slate-400">Proyectos totales</div>
+                </div>
+
+                <!-- Pending Evaluations -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-cyan-500/20 rounded-lg">
+                            <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-slate-500">-3.2%</span>
+                    </div>
+                    <div class="text-3xl font-bold mb-1" id="pendingEvals">42</div>
+                    <div class="text-sm text-slate-400">Evaluaciones pendientes</div>
+                </div>
+
+                <!-- Success Rate -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-orange-500/20 rounded-lg">
+                            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-green-500">+5.1%</span>
+                    </div>
+                    <div class="text-3xl font-bold mb-1" id="successRate">98.2%</div>
+                    <div class="text-sm text-slate-400">Tasa de éxito</div>
+                </div>
+
+                <!-- Active Users -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 bg-purple-500/20 rounded-lg">
+                            <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-green-500">+8.3%</span>
+                    </div>
+                    <div class="text-3xl font-bold mb-1" id="activeUsers">856</div>
+                    <div class="text-sm text-slate-400">Usuarios activos</div>
                 </div>
             </div>
 
-            <!-- Navigation -->
-            <nav class="flex-1 p-4">
-                <a href="dashboard.html"
-                    class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-500/10 text-blue-400 mb-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                        </path>
-                    </svg>
-                    <span class="font-medium">Dashboard</span>
-                </a>
-                <a href="catalog.html"
-                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                        </path>
-                    </svg>
-                    <span class="font-medium">Catálogo de Proyectos</span>
-                </a>
-                <a href="evaluation-history.html"
-                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-                        </path>
-                    </svg>
-                    <span class="font-medium">Historial de Evaluaciones</span>
-                </a>
-                <a href="results-ranking.html"
-                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                        </path>
-                    </svg>
-                    <span class="font-medium">Resultados y Rankings</span>
-                </a>
-                <a href="profile-control.html"
-                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white transition mb-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
-                        </path>
-                    </svg>
-                    <span class="font-medium">Perfil</span>
-                </a>
-            </nav>
-
-            <!-- User Profile -->
-            <div class="p-4 border-t border-slate-800">
-                <div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 transition cursor-pointer">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center font-bold">
-                        A
-                    </div>
-                    <div class="flex-1">
-                        <div class="font-medium text-sm">Admin</div>
-                        <div class="text-xs text-slate-500">Evaluador</div>
-                    </div>
-                    <button onclick="AuthService.logout()" class="text-slate-400 hover:text-white">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                            </path>
-                        </svg>
+            <!-- Recent Projects Table -->
+            <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-700 flex items-center justify-between">
+                    <h2 class="text-lg font-bold">Lista de proyectos recientes</h2>
+                    <button
+                        class="gradient-primary px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition">
+                        Nuevo Proyecto
                     </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-slate-900/50">
+                            <tr>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
+                                    Nombre del Proyecto</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
+                                    Fecha de Creación</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
+                                    Progreso</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
+                                    Estado</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
+                                    Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="projectsTableBody" class="divide-y divide-slate-700">
+                            <!-- Projects will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-4 border-t border-slate-700 text-center">
+                    <a href="projects.html" class="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                        Ver todos los proyectos →
+                    </a>
                 </div>
             </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="flex-1 overflow-auto">
-
-            <!-- Header -->
-            <header
-                class="bg-slate-900 border-b border-slate-800 px-8 py-6 flex items-center justify-between sticky top-0 z-10">
-                <div>
-                    <h1 class="text-2xl font-bold">Panel Principal</h1>
-                    <p class="text-slate-400 text-sm">Bienvenido de nuevo, Admin</p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button class="p-2 hover:bg-slate-800 rounded-lg transition">
-                        <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                            </path>
-                        </svg>
-                    </button>
-                    <button class="p-2 hover:bg-slate-800 rounded-lg transition">
-                        <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </header>
-
-            <!-- Content -->
-            <div class="p-8">
-
-                <!-- Stats Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-
-                    <!-- Total Projects -->
-                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="p-3 bg-blue-500/20 rounded-lg">
-                                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <span class="text-xs text-slate-500">+12.5%</span>
-                        </div>
-                        <div class="text-3xl font-bold mb-1" id="totalProjects">1,284</div>
-                        <div class="text-sm text-slate-400">Proyectos totales</div>
-                    </div>
-
-                    <!-- Pending Evaluations -->
-                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="p-3 bg-cyan-500/20 rounded-lg">
-                                <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-                                    </path>
-                                </svg>
-                            </div>
-                            <span class="text-xs text-slate-500">-3.2%</span>
-                        </div>
-                        <div class="text-3xl font-bold mb-1" id="pendingEvals">42</div>
-                        <div class="text-sm text-slate-400">Evaluaciones pendientes</div>
-                    </div>
-
-                    <!-- Success Rate -->
-                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="p-3 bg-orange-500/20 rounded-lg">
-                                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <span class="text-xs text-green-500">+5.1%</span>
-                        </div>
-                        <div class="text-3xl font-bold mb-1" id="successRate">98.2%</div>
-                        <div class="text-sm text-slate-400">Tasa de éxito</div>
-                    </div>
-
-                    <!-- Active Users -->
-                    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="p-3 bg-purple-500/20 rounded-lg">
-                                <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <span class="text-xs text-green-500">+8.3%</span>
-                        </div>
-                        <div class="text-3xl font-bold mb-1" id="activeUsers">856</div>
-                        <div class="text-sm text-slate-400">Usuarios activos</div>
-                    </div>
-                </div>
-
-                <!-- Recent Projects Table -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
-                    <div class="px-6 py-4 border-b border-slate-700 flex items-center justify-between">
-                        <h2 class="text-lg font-bold">Lista de proyectos recientes</h2>
-                        <button
-                            class="gradient-primary px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition">
-                            Nuevo Proyecto
-                        </button>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead class="bg-slate-900/50">
-                                <tr>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
-                                        Nombre del Proyecto</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
-                                        Fecha de Creación</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
-                                        Progreso</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
-                                        Estado</th>
-                                    <th
-                                        class="px-6 py-3 text-left text-xs font-medium text-slate-400 uppercase tracking-wider">
-                                        Acción</th>
-                                </tr>
-                            </thead>
-                            <tbody id="projectsTableBody" class="divide-y divide-slate-700">
-                                <!-- Projects will be loaded here -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="px-6 py-4 border-t border-slate-700 text-center">
-                        <a href="projects.html" class="text-blue-400 hover:text-blue-300 text-sm font-medium">
-                            Ver todos los proyectos →
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+        </div>
+    </template>
 
     <!-- Scripts -->
     <script src="js/config.js"></script>
@@ -272,6 +155,12 @@
     <script src="js/api.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/charts.js"></script>
+
+    <!-- Layout Components -->
+    <script src="js/header.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/layout.js"></script>
 
     <script>
         // Protect route
